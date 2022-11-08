@@ -27,7 +27,7 @@ namespace CaeserCipherAlgorithm
                 if (IsAlphabet(alphabetsAsciiValue))
                 {
                     int alphabetsAsciiValueWithShiftinFactor = alphabetsAsciiValue + shiftingFactor;
-                    if ((IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsCapitalAlphabet(alphabetsAsciiValueValue)) || ((IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsSmallAlphabet(alphabetsAsciiValue))))
+                    if ((IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsCapitalAlphabet(alphabetsAsciiValue)) || ((IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsSmallAlphabet(alphabetsAsciiValue))))
                     {
                         char cipheredCharacter = (char)alphabetsAsciiValueWithShiftinFactor;
                         cipheredText += cipheredCharacter;
