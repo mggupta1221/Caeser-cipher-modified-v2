@@ -6,64 +6,64 @@ namespace CaeserCipherAlgorithm
     {
         private string cipheredText = "";
 
-        private bool IsAlphabet(int charAsciiCheck)
+        private bool IsAlphabet(int alphabetsAsciiValue)
         {
-            return ((IsCapitalAlphabet(charAsciiCheck) || IsSmallAlphabet(charAsciiCheck)));
+            return ((IsCapitalAlphabet(alphabetsAsciiValue) || IsSmallAlphabet(alphabetsAsciiValue)));
         }
-        private bool IsCapitalAlphabet(int charAsciiCheck)
+        private bool IsCapitalAlphabet(int alphabetsAsciiValue)
         {
-            return (charAsciiCheck >= 65 && charAsciiCheck <= 90);
+            return (alphabetsAsciiValue >= 65 && alphabetsAsciiValue <= 90);
         }
-        private bool IsSmallAlphabet(int charAsciiCheck)
+        private bool IsSmallAlphabet(int alphabetsAsciiValue)
         {
-            return (charAsciiCheck >= 97 && charAsciiCheck <= 122);
+            return (alphabetsAsciiValue >= 97 && alphabetsAsciiValue <= 122);
         }
         public string DoCeaserCipher(string inputString, int shiftingFactor) 
         {
 
             for (int count = 0; count < inputString.Length; count++)
             {
-                int charAsciiValue = (int)(inputString[count]);
-                if (IsAlphabet(charAsciiValue))
+                int alphabetsAsciiValue = (int)(inputString[count]);
+                if (IsAlphabet(alphabetsAsciiValue))
                 {
-                    int charAsciiValueWithShiftinFactor = charAsciiValue + shiftingFactor;
-                    if ((IsCapitalAlphabet(charAsciiValueWithShiftinFactor) && IsCapitalAlphabet(charAsciiValue)) || ((IsSmallAlphabet(charAsciiValueWithShiftinFactor) && IsSmallAlphabet(charAsciiValue))))
+                    int alphabetsAsciiValueWithShiftinFactor = alphabetsAsciiValue + shiftingFactor;
+                    if ((IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsCapitalAlphabet(alphabetsAsciiValueValue)) || ((IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsSmallAlphabet(alphabetsAsciiValue))))
                     {
-                        char cipheredCharacter = (char)charAsciiValueWithShiftinFactor;
+                        char cipheredCharacter = (char)alphabetsAsciiValueWithShiftinFactor;
                         cipheredText += cipheredCharacter;
                     }
                     else
                     {
                         if (shiftingFactor > 0)
                         {
-                            if (IsCapitalAlphabet(charAsciiValue))
+                            if (IsCapitalAlphabet(alphabetsAsciiValue))
                             {
-                                charAsciiValueWithShiftinFactor = 64 + (charAsciiValueWithShiftinFactor - 90);
-                                char c = (char)charAsciiValueWithShiftinFactor;
+                               alphabetsAsciiValueWithShiftinFactor = 64 + (alphabetsAsciiValueWithShiftinFactor - 90);
+                                char c = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText += c;
                             }
-                            else if (IsSmallAlphabet(charAsciiValue)) 
+                            else if (IsSmallAlphabet(alphabetsAsciiValue)) 
                             {
-                                charAsciiValueWithShiftinFactor = 96 + (charAsciiValueWithShiftinFactor - 122);
-                                char c = (char)charAsciiValueWithShiftinFactor;
+                                alphabetsAsciiValueWithShiftinFactor = 96 + (alphabetsAsciiValueWithShiftinFactor - 122);
+                                char c = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText += c;
                             }
                         }
                         else
                         {
-                            if (IsCapitalAlphabet(charAsciiValue))
+                            if (IsCapitalAlphabet(alphabetsAsciiValue))
                             {
-                                if (charAsciiValueWithShiftinFactor < 65)
+                                if (alphabetsAsciiValueWithShiftinFactor < 65)
                                 {
-                                    charAsciiValueWithShiftinFactor = 90 - (64 - charAsciiValueWithShiftinFactor);
+                                   alphabetsAsciiValueWithShiftinFactor = 90 - (64 - alphabetsAsciiValueWithShiftinFactor);
                                 }
-                                char c = (char)charAsciiValueWithShiftinFactor;
+                                char c = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText += c;
                             }
-                            else if (IsSmallAlphabet(charAsciiValue) && charAsciiValueWithShiftinFactor < 97) 
+                            else if (IsSmallAlphabet(alphabetsAsciiValue) && alphabetsAsciiValueWithShiftinFactor < 97) 
                             {
-                                charAsciiValueWithShiftinFactor = 122 - (96 - charAsciiValueWithShiftinFactor);
-                                char c = (char)charAsciiValueWithShiftinFactor;
+                               alphabetsAsciiValueWithShiftinFactor = 122 - (96 - alphabetsAsciiValueWithShiftinFactor);
+                                char c = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText += c;
                             }
                         }
